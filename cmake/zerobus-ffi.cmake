@@ -48,9 +48,9 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
     return()
   endif()
 elseif(CMAKE_SYSTEM_NAME STREQUAL "Windows")
-  if(CMAKE_SYSTEM_PROCESSOR MATCHES "^(ARM64|ARM|AARCH64|arm64|aarch64|arm)$")
+  if(CMAKE_SYSTEM_PROCESSOR MATCHES "^(aarch64|arm64|ARM64|AARCH64)$")
     message(STATUS
-      "ZeroBus FFI: no prebuilt library for Windows ${CMAKE_SYSTEM_PROCESSOR}, "
+      "ZeroBus FFI: no prebuilt library for Windows '${CMAKE_SYSTEM_PROCESSOR}', "
       "disabling out_zerobus. "
       "To build manually, set -DZEROBUS_LIB_DIR=/path/to/lib.")
     FLB_OPTION(FLB_OUT_ZEROBUS OFF)
